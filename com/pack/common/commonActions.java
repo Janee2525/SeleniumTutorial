@@ -12,7 +12,7 @@ public class commonActions {
 	 }
 	  public static void scrollTo(WebDriver driver, WebElement element){
 		            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",  element);
-		            System.out.println("I am scrolling to element:" + element);
+		            
 	  }
 
 }

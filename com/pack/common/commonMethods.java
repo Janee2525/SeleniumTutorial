@@ -41,7 +41,7 @@ public class commonMethods {
 	
 	public void goToUrl(String baseUrl){
 		     driver.get(baseUrl);
-		     System.out.println("Go to URL");
+		     System.out.println("Go to " +baseUrl);
 	}
 	
 	public void closeBrowser(){
@@ -54,5 +54,35 @@ public class commonMethods {
 		       Assert.assertEquals(expectedText, actualText);
 		       System.out.println("Verify text - "+ expectedText);
 	}
+	public WebElement getElement( String locator,String value ){
+        WebElement element = null;                     
+        switch (locator){
+        case "id":  
+        	       element =driver.findElement(By.id(value));
+                   break;
+        case "linkText": 
+        	       element =driver.findElement(By.linkText(value));
+                    break;
+        case "name":
+        	        element=driver.findElement(By.name(value));
+                    break;
+        case "partialLink": 
+        	        element =driver.findElement(By.partialLinkText(value));
+                    break;
+        case "tagName":  
+        	       element=driver.findElement(By.tagName(value));
+                    break;
+        case "xpath":
+        	       element=driver.findElement(By.xpath(value));
+                   break;
+        case "className": 
+        	       element= driver.findElement(By.className(value));
+                   break;
+        case "cssSelector": 
+        	       element =driver.findElement(By.cssSelector(value));
+                   break;
+}
+        return element;
 	
+}
 }
